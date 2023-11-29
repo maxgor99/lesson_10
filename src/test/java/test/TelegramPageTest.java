@@ -1,7 +1,7 @@
 package test;
 
 import com.codeborne.selenide.Configuration;
-import fixture.LanguageEnumTest;
+import fixture.LanguageEnum;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -17,9 +17,9 @@ public class TelegramPageTest {
         Configuration.pageLoadStrategy = "eager";
     }
 
-    @EnumSource(LanguageEnumTest.class)
+    @EnumSource(LanguageEnum.class)
     @ParameterizedTest(name = "выбор языка на сайте")
-    void telegramSiteShouldDisplayCorrectText(LanguageEnumTest language) {
+    void telegramSiteShouldDisplayCorrectText(LanguageEnum language) {
         open("https://telegram.org/");
         $(".dropdown.top_lang_select").click();
         $$(".dropdown-menu li").find(text(language.name())).click();
