@@ -1,13 +1,10 @@
 package fixture;
 
-import org.junit.jupiter.params.provider.Arguments;
 
-import java.util.List;
-import java.util.stream.Stream;
 
 public enum LanguageEnumTest {
-    Deutsch("ein neues Messaging-Zeitalter"),
-    English("a new era of messaging");
+    DE("ein neues Messaging-Zeitalter"),
+    EN("a new era of messaging");
 
     public final String description;
 
